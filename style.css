@@ -1,33 +1,41 @@
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+  /* background-image: url('path/to/your/image.jpg'); */
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Navigation Bar */
 
 #home {
-  background-color:  black;
+  background-color: black;
   padding-bottom: 1cm;
-  margin-left:-1cm;
-  margin-right:-1cm;
-  margin-top:-1cm;
+  margin-left: -1cm;
+  margin-right: -1cm;
+  margin-top: -1cm;
   padding-top: 2cm;
   padding-bottom: 2cm;
   height: 5mm;
- }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
 .topmenu {
   color: lightgray;
   margin: 10px;
   padding: 20px;
   font-size: 20px;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .topmenu:hover {
   color: white;
   font-weight: bolder;
   text-decoration: underline;
-  /* Add the styles here */
+  background-color: #7600bc;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .topdiv {
@@ -52,9 +60,9 @@ body {
 }
 
 .contact_info img {
-  width:25px;
+  width: 25px;
   margin-right: 10px;
-  float:left;
+  float: left;
 }
 
 /* Titles */
@@ -78,8 +86,17 @@ h2 {
   float: left;
   margin-top: 30px;
   margin-bottom: 20px;
-  animation-duration: 5s;
+  animation: fadeIn 5s;
   position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Used in the About Me sections */
@@ -89,37 +106,39 @@ h2 {
 }
 
 /* About Me */
-
-.about-me {
+#about-me {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 #about-me h1 {
-  font-size: 65px;
-  margin-top: 90px;
+  font-size: 40px;
+  margin-top: 20px;
   color: black;
 }
 
 #about-me p {
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(128, 128, 128);
-  margin-top: -1cm;
+  margin-top: 10px;
+  max-width: 800px; /* Limit the width of the text */
 }
 
 .profile_image {
-  width: 550px;
-  height: fit-content;
-  vertical-align: middle;
-  margin: 5px;
+  width: 300px; /* Adjust the size as needed */
+  height: auto;
+  border-radius: 50%; /* Make the image circular */
+  margin-bottom: 20px; /* Space between the image and the introduction */
 }
 
 /* Skills */
 
 .all_skills {
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .skill {
@@ -145,15 +164,15 @@ h2 {
   margin-block-start: 8px;
   margin-block-end: 5px;
   font-weight: bold;
-} 
+}
 
 .skills p {
   align-items: center;
   font-size: 15px;
   color: gray;
   margin-block-start: 5px;
-  margin-block-end: 5px;  
-} 
+  margin-block-end: 5px;
+}
 
 .flex_center {
   display: flex;
@@ -210,9 +229,9 @@ h2 {
   box-shadow: 0 3px 10px var(--primary-shadow);
   padding: 20px;
   margin: 10px;
-  border:1px solid gray;
+  border: 1px solid gray;
   font-size: 18px;
-  height:150px
+  height: 150px
 }
 
 .recommendation span {
@@ -223,7 +242,7 @@ h2 {
 
 /* Scroll to Top Button */
 
-.iconbutton{
+.iconbutton {
   width: 48px;
   height: 48px;
   border-radius: 100%;
@@ -240,12 +259,12 @@ h2 {
 /* Form Pop-up */
 
 .popup {
-  width:400px;
+  width: 400px;
   background-color: black;
   border-radius: 3mm;
   top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   position: fixed;
   /* padding: 30px; */
@@ -289,19 +308,20 @@ h2 {
 
 /* Recommendation Form */
 
-input, textarea {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-  margin: 10px;  
-  width:100%;
+input,
+textarea {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 10px;
+  width: 100%;
 }
 
 fieldset {
   display: flexbox;
   align-content: center;
-  justify-content: center;  
-  padding: 25px; 
-  margin-left: 50px; 
-  margin-right: 50px;   
+  justify-content: center;
+  padding: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
   border: thin solid white;
   width: 50%;
 }
@@ -322,11 +342,21 @@ button {
 }
 
 button:hover {
-  background-color: black;
+  background-color: #7600bc;
   border: 1px solid black;
   color: #fff;
   display: block;
   border-radius: 6px;
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add padding and margin to sections */
+section {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
