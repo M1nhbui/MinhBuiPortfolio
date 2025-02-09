@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: #f0f0f0; /* Light gray background */
@@ -134,50 +138,50 @@ h2 {
 }
 
 /* Skills */
+#skills {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
 
 .all_skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
 .skill {
-  border: 1px solid gray;
-  display: block;
-  border-radius: 6px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 50px;
-  padding: 10px;
-  width: 2in;
-  font-size: 20px;
-  box-shadow: 0 3px 10px gray;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .skill img {
   height: 80px;
-  align-items: center;
+  margin-bottom: 10px;
 }
 
-.skills h6 {
-  align-items: center;
+.skill h6 {
   font-size: 20px;
-  margin-block-start: 8px;
-  margin-block-end: 5px;
+  margin: 10px 0;
   font-weight: bold;
 }
 
-.skills p {
-  align-items: center;
+.skill p {
   font-size: 15px;
   color: gray;
-  margin-block-start: 5px;
-  margin-block-end: 5px;
-}
-
-.flex_center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Projects */
