@@ -38,7 +38,7 @@ body {
   color: white;
   font-weight: bolder;
   text-decoration: underline;
-  background-color: #7600bc;
+  background-color: gray;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -239,7 +239,7 @@ h2 {
 }
 
 .recommendation span {
-  color: #7600bc;
+  color: gray;
   font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -250,7 +250,7 @@ h2 {
   width: 48px;
   height: 48px;
   border-radius: 100%;
-  background-color: #7600bc;
+  background-color: gray;
   display: flex;
   align-items: center;
   justify-content: center;
