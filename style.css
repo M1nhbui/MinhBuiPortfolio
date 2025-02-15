@@ -346,7 +346,7 @@ button {
 }
 
 button:hover {
-  background-color: #7600bc;
+  background-color: gray;
   border: 1px solid black;
   color: #fff;
   display: block;
